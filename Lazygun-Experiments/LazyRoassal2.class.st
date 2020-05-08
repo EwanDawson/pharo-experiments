@@ -4,10 +4,11 @@ Class {
 	#category : #'Lazygun-Experiments'
 }
 
-{ #category : #'as yet unclassified' }
+{ #category : #examples }
 LazyRoassal2 class >> earthquakeMap [
 	"Geographical CSV data"
 
+	<sampleInstance>
 	| tab b |
 	tab := RTTabTable new
 		input:
@@ -26,10 +27,11 @@ LazyRoassal2 class >> earthquakeMap [
 	^ b
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #examples }
 LazyRoassal2 class >> earthquakeTimeline [
 	"Timeline of seismic activity"
 
+	<sampleInstance>
 	| tab v es |
 	tab := RTTabTable new
 		input:
@@ -68,8 +70,10 @@ LazyRoassal2 class >> earthquakeTimeline [
 	^ v
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #examples }
 LazyRoassal2 class >> ebolaPlot [
+
+	<sampleInstance>
 	| tab b data ds |
 	"Preparing the data"
 	tab := RTTabTable new
@@ -102,7 +106,7 @@ LazyRoassal2 class >> ebolaPlot [
 	^ b
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #examples }
 LazyRoassal2 class >> filesystem: path suffix: suffix [
 "Visualising the file system"
 | allFilesUnderPath b |
@@ -120,15 +124,16 @@ b layout cluster.
 
 ]
 
-{ #category : #'as yet unclassified' }
-LazyRoassal2 class >> multiplot: num [
+{ #category : #examples }
+LazyRoassal2 class >> multiplot [
 	"Multiple graphs"
 
+  <sampleInstance>
 	| b colorNormalizer ds |
 	b := RTGrapher new.
 	colorNormalizer := RTMultiLinearColorForIdentity new
-		objects: (1 to: num).
-	1 to: num do: [ :i | 
+		objects: (1 to: 5).
+	1 to: 5 do: [ :i | 
 		ds := RTData new
 			noDot;
 			points: ((1 to: 500) collect: [ :ii | 50 atRandom - 25 ]) cumsum;
@@ -138,19 +143,21 @@ LazyRoassal2 class >> multiplot: num [
 	^ b
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #examples }
 LazyRoassal2 class >> numberCluster [
-| b |
-b := RTMondrian new.
-b shape label.
-b nodes: (1 to: 100).
-b edges connectFrom: [  :i | i // 2 ].
-b layout cluster.
-^b
+	<sampleInstance>
+	| b |
+	b := RTMondrian new.
+	b shape label.
+	b nodes: (1 to: 100).
+	b edges connectFrom: [ :i | i // 2 ].
+	b layout cluster.
+	^ b
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #examples }
 LazyRoassal2 class >> openStreetMapBar [
+	<sampleInstance>
 	| v map paris london newyork data |
 	v := RTView new.
 	v @ RTDraggableView.
@@ -189,10 +196,11 @@ LazyRoassal2 class >> openStreetMapBar [
 	^ v
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #examples }
 LazyRoassal2 class >> openStreetMapPlot [
 	"More OpenStreetMap"
 
+	<sampleInstance>
 	| v map london data b d elementsAndEdges whiteBackground |
 	v := RTView new.
 	v @ RTDraggableView.
@@ -231,8 +239,9 @@ LazyRoassal2 class >> openStreetMapPlot [
 	^ v
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #examples }
 LazyRoassal2 class >> timeline [
+	<sampleInstance>
 	| data b s |
 	data := #(#(WP1 0 4) #(WP2 4 8) #(WP3 8 12) #(WP4 3 4) #(WP4 7 9) #(WP4 10 12)).
 	b := RTTimeline new.
@@ -249,8 +258,9 @@ LazyRoassal2 class >> timeline [
 	^ b
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #examples }
 LazyRoassal2 class >> usCensus [
+	<sampleInstance>
 	| tab b |
 	tab := RTTabTable new
 		input:
